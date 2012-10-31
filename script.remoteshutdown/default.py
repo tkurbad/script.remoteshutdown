@@ -7,7 +7,8 @@ import xbmcaddon
 
 settings = xbmcaddon.Addon(id = 'script.shutdown')
 hostname = settings.getSetting('hostname')
+sshpath = settings.getSetting('sshpath')
+command = settings.getSetting('command')
 
-subprocess.call(['/usr/bin/ssh', '-y', '-l', 'root',
-        '%s' % hostname, 'shutdown -hP now'])
-
+subprocess.call(['%s' % sshpath'/usr/bin/ssh', '-y', '-l', 'root',
+        '%s' % hostname, '%' % command])

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
-    <string id="51000">Hostname or IP-Address</string>
+    <string id="51000">Remote hostname or IP-address</string>
+    <string id="51001">Pathname of local 'ssh' command</string>
+    <string id="51002">Command to execute on the remote host</string>
 </strings>

@@ -10,7 +10,7 @@
              library="default.py" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Remotely shuts down a (Linux) host via SSH</summary>
-    <description lang="en">Sends shutdown command to a remote host using SSH</description>
+    <description lang="en">Sends shutdown (or any other arbitrary) command to a remote host using SSH</description>
     <platform>all</platform>
   </extension>
 </addon>
