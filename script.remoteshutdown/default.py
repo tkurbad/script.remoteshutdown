@@ -4,8 +4,10 @@ import subprocess
 import xbmcaddon
 
 # hostname example 'host.domain.com'
+# sshpath example '/usr/bin/ssh'
+# command example 'shutdown -hP now'
 
-settings = xbmcaddon.Addon(id = 'script.shutdown')
+settings = xbmcaddon.Addon(id = 'script.remoteshutdown')
 hostname = settings.getSetting('hostname')
 sshpath = settings.getSetting('sshpath')
 command = settings.getSetting('command')
