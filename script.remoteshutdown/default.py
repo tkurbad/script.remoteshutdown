@@ -10,5 +10,5 @@ hostname = settings.getSetting('hostname')
 sshpath = settings.getSetting('sshpath')
 command = settings.getSetting('command')
 
-subprocess.call(['%s' % sshpath'/usr/bin/ssh', '-y', '-l', 'root',
+subprocess.call(['%s' % sshpath, '-y', '-l', 'root',
         '%s' % hostname, '%' % command])
