@@ -1,0 +1,11 @@
+
+c5a2794 (HEAD, tag: 0.0.4, origin/master, origin/HEAD, master) Version 0.0.4
+77d05b5 Fixed commandline options
+eeec73e Refined logging
+2947075 Refined structure
+8c2ec6f Lots of changes - still doesn't work on frodo, though :-(
+f152c91 Fixed typo, added examples
+f8301fc Fixed copy+paste leftover
+7593fcc Added several config parameters, fixed typeset
+6505e4a Initial checkin
+a78c5a9 Initial commit
