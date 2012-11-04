@@ -40,20 +40,19 @@ debug = settings.getSetting('debug')
 
 def main():
     """ Do the actual execution. """
-    if debug:
-        msg = "RemoteShutdown: '%s -o \"ConnectTimeout %d\" %s %s@%s \"%s\"'" % (
-                sshpath, timeout, ' '.join(sshextraopts), remoteuser,
-                hostname, command)
-        xbmc.log(msg = msg, level = xbmc.LOGDEBUG)
-
     notification = 'XBMC.Notification("Sending command to %s@%s", "%s %s %s", 5000)' % (
         remoteuser, hostname, sshpath, '-o "ConnectTimeout %d" %s' % (
             timeout, ' '.join(sshextraopts)), command)
     xbmc.executebuiltin(notification)
-    cmdline = ['%s' % sshpath, '-o', '"ConnectTimeout %d"' % timeout]
+    cmdline = ['%s' % sshpath, '-o', 'ConnectTimeout %d' % timeout]
     cmdline.extend(sshextraopts)
-    cmdline.extend(['%s@%s' % (remoteuser, hostname), '"%s"' % command])
-    retval = subprocess.call(cmdline)
+    cmdline.extend(['%s@%s' % (remoteuser, hostname), '%s' % command])
+
+    if debug:
+        msg = "RemoteShutdown: '%s'" % ' '.join(cmdline)
+        xbmc.log(msg = msg, level = xbmc.LOGDEBUG)
+
+    subprocess.call(cmdline)
 
 if __name__ == '__main__':
     main()

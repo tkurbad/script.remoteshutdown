@@ -5,5 +5,6 @@
     <string id="51002">Connect timeout</string>
     <string id="51003">Remote username to connect as</string>
     <string id="51004">Command to execute on the remote host</string>
+    <string id="51005">Etra options to pass to 'ssh' command</string>
     <string id="51010">Enable debugging</string>
 </strings>
