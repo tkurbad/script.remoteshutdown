@@ -4,6 +4,7 @@ import xbmc
 import xbmcaddon
 
 import os
+import shlex
 import subprocess
 
 __settings__   = xbmcaddon.Addon(id='script.remoteshutdown')
@@ -31,23 +32,28 @@ command = settings.getSetting('command')
 # ssh connect timeout (e.g. 20)
 timeout = (int(settings.getSetting('timeout')) * 5) + 5
 
+# ssh extra commandline options (e.g. '-y')
+sshextraopts = shlex.split(settings.getSetting('sshextraopts'))
+
 # enable log output (false)
 debug = settings.getSetting('debug')
 
 def main():
     """ Do the actual execution. """
     if debug:
-        msg = "RemoteShutdown: '%s -o \"ConnectTimeout %d\" -y %s@%s \"%s\"'" % (
-                sshpath, timeout, remoteuser, hostname, command)
+        msg = "RemoteShutdown: '%s -o \"ConnectTimeout %d\" %s %s@%s \"%s\"'" % (
+                sshpath, timeout, ' '.join(sshextraopts), remoteuser,
+                hostname, command)
         xbmc.log(msg = msg, level = xbmc.LOGDEBUG)
 
-    notification = 'XBMC.Notification("Sending command to %s", "%s", 5000)' % (
-        hostname, sshpath)
+    notification = 'XBMC.Notification("Sending command to %s@%s", "%s %s %s", 5000)' % (
+        remoteuser, hostname, sshpath, '-o "ConnectTimeout %d" %s' % (
+            timeout, ' '.join(sshextraopts)), command)
     xbmc.executebuiltin(notification)
-    retval = subprocess.call(['%s' % sshpath, '-o',
-                '"ConnectTimeout %d"' % timeout, '-y',
-                '%s@%s' % (remoteuser, hostname),
-                '"%s"' % command])
+    cmdline = ['%s' % sshpath, '-o', '"ConnectTimeout %d"' % timeout]
+    cmdline.extend(sshextraopts)
+    cmdline.extend(['%s@%s' % (remoteuser, hostname), '"%s"' % command])
+    retval = subprocess.call(cmdline)
 
 if __name__ == '__main__':
     main()
