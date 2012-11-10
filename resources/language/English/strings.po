@@ -1,0 +1,72 @@
+# XBMC Media Center language file
+# Addon Name: Remote Shutdown
+# Addon id: script.remoteshutdown
+# Addon version: 0.0.6
+# Addon Provider: Torsten Kurbad
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2012-11-10 20:58+0000\n"
+"PO-Revision-Date: 2012-11-20 22:01+0000\n"
+"Last-Translator: Torsten Kurbad <github@tk-webart.de>\n"
+"Language-Team: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgctxt "Addon Summary"
+msgid "Remotely shuts down a (Linux) host via SSH"
+msgstr "Remotely shuts down a (Linux) host via SSH"
+
+msgctxt "Addon Description"
+msgid "Sends 'shutdown -hP now' or any other (configurable) command to a remote host using SSH"
+msgstr "Sends 'shutdown -hP now' or any other (configurable) command to a remote host using SSH"
+
+#Settings
+
+msgctxt "#41000"
+msgid "Sending command to %remoteuser%@%hostname%"
+msgstr "Sending command to %remoteuser%@%hostname%"
+
+msgctxt "#41001"
+msgid "Remote command execution successful!"
+msgstr "Remote command execution successful!"
+
+msgctxt "#41002"
+msgid "Remote command execution failed!"
+msgstr "Remote command execution failed!"
+
+#empty strings from id 41003 to 50999
+
+msgctxt "#51000"
+msgid "Remote hostname or IP-address"
+msgstr "Remote hostname or IP-address"
+
+msgctxt "#51001"
+msgid "Pathname of local 'ssh' command"
+msgstr "Pathname of local 'ssh' command"
+
+msgctxt "#51002"
+msgid "Connect timeout"
+msgstr "Connect timeout"
+
+msgctxt "#51003"
+msgid "Remote username to connect as"
+msgstr "Remote username to connect as"
+
+msgctxt "#51004"
+msgid "Command to execute on the remote host"
+msgstr "Command to execute on the remote host"
+
+msgctxt "#51005"
+msgid "Extra options to pass to 'ssh' command"
+msgstr "Extra options to pass to 'ssh' command"
+
+#empty strings from id 51006 to 51009
+
+msgctxt "#51010"
+msgid "Enable debugging"
+msgstr "Enable debugging"

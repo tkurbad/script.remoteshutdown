@@ -1,0 +1,72 @@
+# XBMC Media Center language file
+# Addon Name: Remote Shutdown
+# Addon id: script.remoteshutdown
+# Addon version: 0.0.6
+# Addon Provider: Torsten Kurbad
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2012-11-10 20:58+0000\n"
+"PO-Revision-Date: 2012-11-20 22:06+0000\n"
+"Last-Translator: Torsten Kurbad <github@tk-webart.de>\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgctxt "Addon Summary"
+msgid "Remotely shuts down a (Linux) host via SSH"
+msgstr "Fährt einen entfernten (Linux) Rechner mittels SSH herunter"
+
+msgctxt "Addon Description"
+msgid "Sends 'shutdown -hP now' or any other (configurable) command to a remote host using SSH"
+msgstr "Sendet 'shutdown -hP now' oder einen beliebigen anderen Befehl mittels SSH an einen entfernten Computer"
+
+#Settings
+
+msgctxt "#41000"
+msgid "Sending command to %remoteuser%@%hostname%"
+msgstr "Sende Befehl an %remoteuser%@%hostname%"
+
+msgctxt "#41001"
+msgid "Remote command execution successful!"
+msgstr "Remote-Befehl erfolgreich ausgeführt!"
+
+msgctxt "#41002"
+msgid "Remote command execution failed!"
+msgstr "Remote-Befehl konnte nicht ausgeführt werden!"
+
+#empty strings from id 41003 to 50999
+
+msgctxt "#51000"
+msgid "Remote hostname or IP-address"
+msgstr "Hostname oder IP-Adresse des Remote-Computers"
+
+msgctxt "#51001"
+msgid "Pathname of local 'ssh' command"
+msgstr "Pfad zum lokalen 'ssh'-Befehl"
+
+msgctxt "#51002"
+msgid "Connect timeout"
+msgstr "Timeout für SSH-Verbindung"
+
+msgctxt "#51003"
+msgid "Remote username to connect as"
+msgstr "Nutzername für SSH-Verbindung"
+
+msgctxt "#51004"
+msgid "Command to execute on the remote host"
+msgstr "Auf dem Remote-Computer auszuführender Befehl"
+
+msgctxt "#51005"
+msgid "Extra options to pass to 'ssh' command"
+msgstr "Weitere Kommandozeilenoptionen für den 'ssh'-Befehl"
+
+#empty strings from id 51006 to 51009
+
+msgctxt "#51010"
+msgid "Enable debugging"
+msgstr "Debugging einschalten"
