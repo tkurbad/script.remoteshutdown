@@ -38,21 +38,66 @@ sshextraopts = shlex.split(settings.getSetting('sshextraopts'))
 # enable log output (false)
 debug = settings.getSetting('debug')
 
+def notify(header = '', msg = '', timeout = 5000, icon = None):
+    """ Send XBMC Notifcation """
+
+    # Build notification string
+    notification = 'XBMC.Notification("'
+    notification += header
+    notification += '", "'
+    notification += msg
+    notification += '", '
+    notification += timeout
+    if icon is not None:
+        notification += ', "'
+	notification += icon
+	notification += '"'
+    notification += ')'
+
+    # Notify
+    xbmc.executebuiltin(notification)
+
+
 def main():
     """ Do the actual execution. """
-    notification = 'XBMC.Notification("Sending command to %s@%s", "%s %s %s", 5000)' % (
-        remoteuser, hostname, sshpath, '-o "ConnectTimeout %d" %s' % (
-            timeout, ' '.join(sshextraopts)), command)
-    xbmc.executebuiltin(notification)
+
+    # Send initial notification
+    header = lang(41000).replace('%remoteuser%', remoteuser).replace('%hostname%', hostname)
+    msg = '%s %s %s' % (
+        sshpath, '-o "ConnectTimeout %d" %s' % (
+            timeout, ' '.join(sshextraopts)
+        ), command)
+    notify(header, msg)
+
+    # Build commandline
     cmdline = ['%s' % sshpath, '-o', 'ConnectTimeout %d' % timeout]
     cmdline.extend(sshextraopts)
     cmdline.extend(['%s@%s' % (remoteuser, hostname), '%s' % command])
 
     if debug:
-        msg = "RemoteShutdown: '%s'" % ' '.join(cmdline)
-        xbmc.log(msg = msg, level = xbmc.LOGDEBUG)
+        logmsg = "RemoteShutdown: '%s'" % ' '.join(cmdline)
+        xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
 
-    subprocess.call(cmdline)
+    retval = subprocess.call(cmdline)
+
+    # Success
+    if retval == 0:
+        if debug:
+            logmsg = 'RemoteShutdown: Success!'
+            xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
+
+        header = lang(41001)
+        notify(header, msg)
+        return
+
+    # Error
+    if debug:
+        logmsg = 'RemoteShutdown: Error!'
+        xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
+
+    header = lang(41002)
+    notify(header, msg)
+
 
 if __name__ == '__main__':
     main()

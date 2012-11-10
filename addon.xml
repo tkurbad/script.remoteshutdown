@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.remoteshutdown"
        name="Remote Shutdown"
-       version="0.0.5"
+       version="0.0.6"
        provider-name="Torsten Kurbad">
   <requires>
     <import addon="xbmc.python" version="2.0" />
@@ -9,8 +9,18 @@
   <extension point="xbmc.python.script"
              library="default.py" />
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Remotely shuts down a (Linux) host via SSH</summary>
-    <description lang="en">Sends shutdown (or any other arbitrary) command to a remote host using SSH</description>
+    <summary lang="de">
+	Fährt einen entfernten (Linux) Rechner mittels SSH herunter
+    </summary>
+    <summary lang="en">
+	Remotely shuts down a (Linux) host via SSH
+    </summary>
+    <description lang="de">
+	Sendet 'shutdown -hP now' oder einen beliebigen anderen Befehl mittels SSH an einen entfernten Computer
+    </description>
+    <description lang="en">
+	Sends 'shutdown -hP now' or any other (configurable) command to a remote host using SSH
+    </description>
     <platform>all</platform>
   </extension>
 </addon>
