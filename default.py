@@ -49,31 +49,21 @@ icon_error = os.path.join(iconsdir, 'ssh_error.png')
 def notify(header = '', msg = '', timeout = 5000, icon = None):
     """ Send XBMC Notifcation """
 
-    # Resolve unicode problems
-    try:
-        test = unicode(header)
-    except UnicodeEncodeError:
-        header = header.encode('iso-8859-1')
-    try:
-        test = unicode(msg)
-    except UnicodeEncodeError:
-        msg = msg.encode('iso-8859-1')
-
     # Build notification string
-    notification = 'XBMC.Notification("'
-    notification += header
-    notification += '", "'
-    notification += msg
-    notification += '", '
-    notification += '%d' % timeout
+    notification = u'XBMC.Notification("'
+    notification += u'%s' % header
+    notification += u'", "'
+    notification += u'%s' % msg
+    notification += u'", '
+    notification += u'%d' % timeout
     if icon is not None:
-        notification += ', "'
-	notification += icon
-	notification += '"'
-    notification += ')'
+        notification += u', "'
+	notification += u'%s' % icon
+	notification += u'"'
+    notification += u')'
 
     # Notify
-    xbmc.executebuiltin(notification)
+    xbmc.executebuiltin(notification.encode('utf-8'))
 
 
 def main():
