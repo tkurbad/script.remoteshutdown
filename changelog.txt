@@ -1,3 +1,6 @@
+2012-11-10 Version 0.0.7
+  * Updated translation to new Frodo format
+
 2012-11-10 Version 0.0.6
   * Added German language resources
   * Beautified notifications
