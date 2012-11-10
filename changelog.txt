@@ -1,3 +1,7 @@
+2012-11-11 Version 0.2.0
+  * Fixed returncode handling to correctly determine success or error
+    of SSH execution
+
 2012-11-10 Version 0.1.2
   * Fixed UnicodeDecodeError for localized notifications (the sane way :-)
 

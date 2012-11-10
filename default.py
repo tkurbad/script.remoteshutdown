@@ -30,7 +30,7 @@ command = settings.getSetting('command')
 # ssh connect timeout (e.g. 20)
 timeout = (int(settings.getSetting('timeout')) * 5) + 5
 
-# ssh extra commandline options (e.g. '-y')
+# ssh extra commandline options (e.g. '-i /path/to/key')
 sshextraopts = shlex.split(settings.getSetting('sshextraopts'))
 
 # enable log output (false)
@@ -78,7 +78,7 @@ def main():
     notify(header = header, msg = msg, icon = icon_ssh)
 
     # Build commandline
-    cmdline = ['%s' % sshpath, '-o', 'ConnectTimeout %d' % timeout]
+    cmdline = ['%s' % sshpath, '-q', '-o', 'ConnectTimeout %d' % timeout]
     cmdline.extend(sshextraopts)
     cmdline.extend(['%s@%s' % (remoteuser, hostname), '%s' % command])
 
@@ -86,10 +86,10 @@ def main():
         logmsg = "RemoteShutdown: '%s'" % ' '.join(cmdline)
         xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
 
-    retval = subprocess.call(cmdline)
+    returncode = subprocess.call(cmdline)
 
     # Success
-    if retval == 0:
+    if returncode == 0:
         if debug:
             logmsg = 'RemoteShutdown: Success!'
             xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
