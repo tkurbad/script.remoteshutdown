@@ -15,8 +15,6 @@ __scriptname__ = "XBMC Remote Shutdown"
 # Get Settings
 settings = xbmcaddon.Addon(id = 'script.remoteshutdown')
 
-lang = settings.getLocalizedString
-
 # remote hostname (e.g. 'host.domain.com')
 hostname = settings.getSetting('hostname')
 
@@ -38,6 +36,16 @@ sshextraopts = shlex.split(settings.getSetting('sshextraopts'))
 # enable log output (false)
 debug = settings.getSetting('debug')
 
+# Shortcut to getLocalizedString
+lang = settings.getLocalizedString
+
+# Notification Icons
+iconsdir = os.path.join(__cwd__, 'resources', 'icons')
+icon_ssh = os.path.join(iconsdir, 'ssh.png')
+icon_success = os.path.join(iconsdir, 'ssh_success.png')
+icon_error = os.path.join(iconsdir, 'ssh_error.png')
+
+# Methods
 def notify(header = '', msg = '', timeout = 5000, icon = None):
     """ Send XBMC Notifcation """
 
@@ -67,7 +75,7 @@ def main():
         sshpath, '-o "ConnectTimeout %d" %s' % (
             timeout, ' '.join(sshextraopts)
         ), command)
-    notify(header, msg)
+    notify(header = header, msg = msg, icon = icon_ssh)
 
     # Build commandline
     cmdline = ['%s' % sshpath, '-o', 'ConnectTimeout %d' % timeout]
@@ -87,7 +95,7 @@ def main():
             xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
 
         header = lang(41001)
-        notify(header, msg)
+        notify(header = header, msg = msg, icon = icon_success)
         return
 
     # Error
@@ -96,7 +104,7 @@ def main():
         xbmc.log(msg = logmsg, level = xbmc.LOGDEBUG)
 
     header = lang(41002)
-    notify(header, msg)
+    notify(header = header, msg = msg, icon = icon_error)
 
 
 if __name__ == '__main__':
