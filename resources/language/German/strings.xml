@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- Settings -->
+    <string id="51000">Hostname oder IP-Adresse des Remote-Computers</string>
+    <string id="51001">Pfad zum lokalen 'ssh'-Befehl</string>
+    <string id="51002">Timeout für SSH-Verbindung</string>
+    <string id="51003">Nutzername für SSH-Verbindung</string>
+    <string id="51004">Auf dem Remote-Computer auszuführender Befehl</string>
+    <string id="51005">Weitere Kommandozeilenoptionen für den 'ssh'-Befehl</string>
+    <string id="51010">Debugging einschalten</string>
+
+    <!-- Notifications -->
+    <string id="41000">Sende Befehl an %remoteuser%@%hostname%</string>
+    <string id="41001">Remote-Befehl erfolgreich ausgeführt!</string>
+    <string id="41002">Remote-Befehl konnte nicht ausgeführt werden!</string>
+</strings>
