@@ -47,7 +47,7 @@ def notify(header = '', msg = '', timeout = 5000, icon = None):
     notification += '", "'
     notification += msg
     notification += '", '
-    notification += timeout
+    notification += '%d' % timeout
     if icon is not None:
         notification += ', "'
 	notification += icon

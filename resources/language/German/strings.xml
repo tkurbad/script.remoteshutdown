@@ -11,6 +11,6 @@
 
     <!-- Notifications -->
     <string id="41000">Sende Befehl an %remoteuser%@%hostname%</string>
-    <string id="41001">Remote-Befehl erfolgreich ausgeführt!</string>
-    <string id="41002">Remote-Befehl konnte nicht ausgeführt werden!</string>
+    <string id="41001">Remote-Befehl erfolgreich ausgefuehrt!</string>
+    <string id="41002">Remote-Befehl konnte nicht ausgefuehrt werden!</string>
 </strings>
