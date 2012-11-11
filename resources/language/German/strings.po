@@ -28,8 +28,8 @@ msgstr "Sendet 'shutdown -hP now' oder einen beliebigen anderen Befehl mittels S
 #Settings
 
 msgctxt "#41000"
-msgid "Sending command to %remoteuser%@%hostname%"
-msgstr "Sende Befehl an %remoteuser%@%hostname%"
+msgid "Sending remote command"
+msgstr "Sende Remote-Befehl"
 
 msgctxt "#41001"
 msgid "Remote command execution successful!"
