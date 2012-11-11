@@ -3,7 +3,7 @@
     <setting id="hostname" type="text" label="51000" default="host.domain.com" />
     <setting id="sshpath" type="text" label="51001" default="/usr/bin/ssh" />
     <setting id="timeout" type="enum" label="51002"
-        values="5|10|15|20|25|30|35|40|45|50|55|60" default="20" />
+        values="5|10|15|20|25|30|35|40|45|50|55|60" default="5" />
     <setting id="remoteuser" type="text" label="51003" default="root" />
     <setting id="command" type="text" label="51004" default="shutdown -hP now" />
     <setting id="sshextraopts" type="text" label="51005" default="" />
