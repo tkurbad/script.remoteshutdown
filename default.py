@@ -46,7 +46,7 @@ if 'ssh' in sshpath:
         settings.setSetting('sshextraopts', ' '.join(sshextraopts))
 
 # enable log output (false)
-debug = settings.getSetting('debug')
+debug = (settings.getSetting('debug') == 'true')
 
 # Shortcut to getLocalizedString
 lang = settings.getLocalizedString
