@@ -31,8 +31,8 @@ remoteuser = settings.getSetting('remoteuser')
 # command to execute remotely (e.g. 'shutdown -hP now')
 command = settings.getSetting('command')
 
-# ssh connect timeout (e.g. 20)
-timeout = (int(settings.getSetting('timeout')) * 5) + 5
+# ssh connect timeout (seconds) (e.g. 30)
+timeout = (int(settings.getSetting('timeout'))
 
 # ssh extra commandline options (e.g. '-i /path/to/key')
 sshextraopts = shlex.split(settings.getSetting('sshextraopts'))

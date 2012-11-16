@@ -50,8 +50,8 @@ msgid "Pathname of local 'ssh' command"
 msgstr "Pfad zum lokalen 'ssh'-Befehl"
 
 msgctxt "#51002"
-msgid "Connect timeout"
-msgstr "Timeout für SSH-Verbindung"
+msgid "Connect timeout (seconds)"
+msgstr "Timeout (in Sekunden) für SSH-Verbindung"
 
 msgctxt "#51003"
 msgid "Remote username to connect as"
