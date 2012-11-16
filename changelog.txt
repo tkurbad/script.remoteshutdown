@@ -1,3 +1,6 @@
+2012-11-16 Version 0.4.0
+  * Fixed default setting for timeout
+
 2012-11-16 Version 0.3.3
   * Fixed bugs introduced with settings changes
 
