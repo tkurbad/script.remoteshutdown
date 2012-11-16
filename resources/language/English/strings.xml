@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- Notifications -->
+    <string id="41000">Sending remote command</string>
+    <string id="41001">Remote command execution successful!</string>
+    <string id="41002">Remote command execution failed!</string>
+
+    <!-- Settings -->
+    <string id="51000">Remote hostname or IP-address</string>
+    <string id="51001">Pathname of local 'ssh' command</string>
+    <string id="51002">Connect timeout (seconds)</string>
+    <string id="51003">Remote username to connect as</string>
+    <string id="51004">Command to execute on the remote host</string>
+    <string id="51005">Extra options to pass to 'ssh' command</string>
+    <string id="51010">Enable debugging</string>
+</strings>
