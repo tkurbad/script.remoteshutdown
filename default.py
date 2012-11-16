@@ -32,7 +32,7 @@ remoteuser = settings.getSetting('remoteuser')
 command = settings.getSetting('command')
 
 # ssh connect timeout (seconds) (e.g. 30)
-timeout = (int(settings.getSetting('timeout'))
+timeout = int(float(settings.getSetting('timeout')))
 
 # ssh extra commandline options (e.g. '-i /path/to/key')
 sshextraopts = shlex.split(settings.getSetting('sshextraopts'))

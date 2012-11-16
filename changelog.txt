@@ -1,3 +1,6 @@
+2012-11-16 Version 0.3.3
+  * Fixed bugs introduced with settings changes
+
 2012-11-16 Version 0.3.2
   * Re-Added strings.xml translation files to keep compatibility with Eden
   * Changed timeout setting to become a slider
