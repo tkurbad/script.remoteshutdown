@@ -67,6 +67,10 @@ msgstr "Weitere Kommandozeilenoptionen für den 'ssh'-Befehl"
 
 #empty strings from id 51006 to 51009
 
+msgctxt "#51010"
+msgid "Enable debugging"
+msgstr "Debugging einschalten"
+
 msgctxt "#51011"
 msgid "Execute using shell"
 msgstr "Verwende Shell zum Ausführen"

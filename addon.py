@@ -109,7 +109,7 @@ def main():
     cmdline_args = []
     if 'ssh' in sshpath:
         cmdline_args.extend([r'-t', r'-y'])
-        cmdline_args.extend([r'-o', r'ConnectTimeout %d' % timeout])
+        cmdline_args.extend([r'-o', r'"ConnectTimeout=%d"' % timeout])
     cmdline_args.extend(sshextraopts)
     cmdline_rhost = [r'%s@%s' % (remoteuser, hostname)]
     cmdline_rcmd = [r'%s' % command]
