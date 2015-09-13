@@ -1,3 +1,6 @@
+2015-09-13 Version 0.5.0
+  * Adapted to Kodi 15
+
 2012-11-16 Version 0.4.0
   * Fixed default setting for timeout
 
