@@ -1,3 +1,6 @@
+2015-09-13 Version 0.6.1
+  * Minor bugfixes
+
 2015-09-13 Version 0.6.0
   * Add 'shell' configuration option
   * Sanitize ssh cmdline
