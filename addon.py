@@ -34,6 +34,9 @@ command = settings.getSetting('command')
 # ssh connect timeout (seconds) (e.g. 30)
 timeout = int(float(settings.getSetting('timeout')))
 
+# use shell
+shell = (settings.getSetting('shell') == 'true')
+
 # ssh extra commandline options (e.g. '-i /path/to/key')
 sshextraopts = shlex.split(settings.getSetting('sshextraopts'))
 #  try to filter some 'dangerous' options
@@ -105,6 +108,7 @@ def main():
     cmdline_cmd = [r'%s' % sshpath]
     cmdline_args = []
     if 'ssh' in sshpath:
+        cmdline_args.extend([r'-t', r'-y'])
         cmdline_args.extend([r'-o', r'ConnectTimeout %d' % timeout])
     cmdline_args.extend(sshextraopts)
     cmdline_rhost = [r'%s@%s' % (remoteuser, hostname)]
@@ -112,6 +116,10 @@ def main():
 
     for part in (cmdline_cmd, cmdline_args, cmdline_rhost, cmdline_rcmd):
         cmdline.extend(part)
+
+    # Execution via shell enabled?
+    if shell:
+        cmdline = ' '.join(cmdline)
 
     # Send initial notification
     header = notify_ssh
@@ -131,7 +139,7 @@ def main():
     try:
         process = subprocess.Popen(
             cmdline,
-            shell = False,
+            shell = shell,
             stdin = subprocess.PIPE,
             stdout = subprocess.PIPE,
             stderr = subprocess.PIPE)

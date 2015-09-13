@@ -70,3 +70,7 @@ msgstr "Extra options to pass to 'ssh' command"
 msgctxt "#51010"
 msgid "Enable debugging"
 msgstr "Enable debugging"
+
+msgctxt "#51011"
+msgid "Execute using shell"
+msgstr "Execute using shell"

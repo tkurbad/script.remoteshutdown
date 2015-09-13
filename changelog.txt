@@ -1,3 +1,7 @@
+2015-09-13 Version 0.6.0
+  * Add 'shell' configuration option
+  * Sanitize ssh cmdline
+
 2015-09-13 Version 0.5.0
   * Adapted to Kodi 15
 

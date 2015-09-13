@@ -13,4 +13,5 @@
     <string id="51004">Command to execute on the remote host</string>
     <string id="51005">Extra options to pass to 'ssh' command</string>
     <string id="51010">Enable debugging</string>
+    <string id="51011">Execute using shell</string>
 </strings>

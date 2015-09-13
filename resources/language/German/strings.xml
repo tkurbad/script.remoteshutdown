@@ -13,4 +13,5 @@
     <string id="51004">Auf dem Remote-Computer auszuführender Befehl</string>
     <string id="51005">Weitere Kommandozeilenoptionen für den 'ssh'-Befehl</string>
     <string id="51010">Debugging einschalten</string>
+    <string id="51011">Verwende Shell zum Ausführen</string>
 </strings>
